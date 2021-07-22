@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register Manager</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <section>
+        <h1>Cash Register Manager</h1>
+        <label>Bill Amount: </label>
+        <input type="number" class="bill-amount" onkeyup="handelBillAmount()" placeholder="Enter bill amount" /><br />
+        <label>Given Cash: </label>
+        <input type="number" class="given-cash" onkeyup="handelGivenCash()" placeholder="Enter given cash" /><br />
+        <button class="check-btn" onclick="handelSubmit()">Check</button>
+        <div class="error"></div>
+        <div class="return-exchange">
+            <h1>Return Amount: </h1>
+            <table border="1">
+                <tr>
+                    <td>
+                        No. of notes
+                    </td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                    <td class="exchange"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Note
+                    </td>
+                    <td>2000</td>
+                    <td>500</td>
+                    <td>200</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <script src="/app.js"></script>
+</body>
+
+</html>
