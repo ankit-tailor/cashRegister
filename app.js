@@ -5,8 +5,19 @@ const exchangeAmount = document.querySelectorAll('.exchange')
 let billAmount, givenCash
 const cashArray = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
 
+// utility functions
+const hideError = () => {
+    erroMessage.innerHTML = ""
+}
+
 const errorMessage = (message) => {
     erroMessage.innerHTML = message
+}
+
+const clearTable = () => {
+    for (let i = 0; i < exchangeAmount.length; i++) {
+        exchangeAmount[i].innerHTML = ""
+    }
 }
 
 const handelBillAmount = () => {
@@ -15,12 +26,6 @@ const handelBillAmount = () => {
 
 const handelGivenCash = () => {
     givenCash = document.querySelector('.given-cash').value
-}
-
-const clearTable = () => {
-    for (let i = 0; i < exchangeAmount.length; i++) {
-        exchangeAmount[i].innerHTML = ""
-    }
 }
 
 const fillTableNotes = () => {
