@@ -4,6 +4,7 @@ const exchangeAmount = document.querySelectorAll('.exchange')
 const givenCashInput = document.querySelector('.given-cash');
 const givenCashLabel = document.querySelector('.given-cash-label');
 const returnExchangeSection = document.querySelector(".return-exchange")
+const checkBtn = document.querySelector(".check-btn")
 
 
 let billAmount, givenCash
@@ -49,6 +50,7 @@ const handelSubmit = () => {
 
     if (givenCashInput.style.display === "") {
         givenCashInput.style.display = "block"
+        checkBtn.innerHTML = "Submit"
     } else {
         if (!billAmount) {
             alert("Please enter bill amount!!")
