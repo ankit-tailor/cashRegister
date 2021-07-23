@@ -46,12 +46,11 @@ const handelSubmit = () => {
         alert("Please enter given cash!!")
     }
 
-    hideError()
-    clearTable()
-
     if (givenCash < billAmount) {
         errorMessage(`Given cash is less than bill amount, please check given cash.`)
     } else {
+        hideError()
+        clearTable()
         if (givenCash === billAmount) {
             console.log("You had given exact cash of bill amount.")
         } else {
