@@ -1,6 +1,10 @@
 
 const erroMessage = document.querySelector(".error")
 const exchangeAmount = document.querySelectorAll('.exchange')
+const givenCashInput = document.querySelector('.given-cash');
+const givenCashLabel = document.querySelector('.given-cash-label');
+const returnExchangeSection = document.querySelector(".return-exchange")
+
 
 let billAmount, givenCash
 const cashArray = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
@@ -39,22 +43,32 @@ const fillTableNotes = () => {
     })
 }
 
-const handelSubmit = () => {
-    if (!billAmount) {
-        alert("Please enter bill amount!!")
-    } else if (!givenCash) {
-        alert("Please enter given cash!!")
-    }
+// Main logic
 
-    if (givenCash < billAmount) {
-        errorMessage(`Given cash is less than bill amount, please check given cash.`)
+const handelSubmit = () => {
+
+    if (givenCashInput.style.display === "") {
+        givenCashInput.style.display = "block"
     } else {
-        hideError()
-        clearTable()
-        if (givenCash === billAmount) {
-            console.log("You had given exact cash of bill amount.")
+        if (!billAmount) {
+            alert("Please enter bill amount!!")
+        } else if (!givenCash) {
+            alert("Please enter given cash!!")
+        }
+
+        if (givenCash < billAmount) {
+            errorMessage(`Given cash is less than bill amount, please check given cash.`)
+            returnExchangeSection.style.display = ""
         } else {
-            fillTableNotes()
+            hideError()
+            clearTable()
+            if (givenCash === billAmount) {
+                errorMessage("You had given exact cash of bill amount.")
+                returnExchangeSection.style.display = ""
+            } else {
+                returnExchangeSection.style.display = "block"
+                fillTableNotes()
+            }
         }
     }
 }
