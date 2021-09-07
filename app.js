@@ -26,11 +26,11 @@ const clearTable = () => {
 }
 
 const handelBillAmount = () => {
-    billAmount = document.querySelector('.bill-amount').value
+    billAmount = parseInt(document.querySelector('.bill-amount').value)
 }
 
 const handelGivenCash = () => {
-    givenCash = document.querySelector('.given-cash').value
+    givenCash = parseInt(document.querySelector('.given-cash').value)
 }
 
 const fillTableNotes = () => {
